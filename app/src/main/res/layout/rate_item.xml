@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp">
+
+    <ImageView
+        android:id="@+id/iv_country"
+        android:layout_width="@dimen/min_view_size"
+        android:layout_height="@dimen/min_view_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_us" />
+
+
+    <TextView
+        android:id="@+id/tv_country"
+        style="@style/CurrencyName"
+        android:text="fsdhlkfsdlfjsdlkf"
+        app:layout_constraintStart_toEndOf="@+id/iv_country"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_country_fullname"
+        style="@style/CurrencyDescription"
+        android:text="fsdhlkfsdlfjsdlkf"
+        app:layout_constraintStart_toEndOf="@+id/iv_country"
+        app:layout_constraintTop_toBottomOf="@+id/tv_country" />
+
+
+    <EditText
+        android:id="@+id/et_rate"
+        style="@style/RateAmount"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

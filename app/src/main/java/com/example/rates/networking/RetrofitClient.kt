@@ -1,7 +1,5 @@
 package com.example.rates.networking
 
-import com.example.rates.helper.CurrencyManager
-import com.example.rates.model.Currency
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -39,15 +37,5 @@ object RetrofitClient {
             .client(httpBuilder.build())
 
         api = retrofitBuilder.build().create(Api::class.java)
-    }
-
-    suspend fun getRates(base: String = "EUR") {
-        val response = api.getRates(base)
-        CurrencyManager.baseCurrency = base
-
-        response.rates.let {
-            val listOfCurrencies = mutableListOf(Currency(base, 1.00, true))
-            listOfCurrencies.addAll(response.rates.map { Currency(it.key, it.value, false) })
-        }
     }
 }
